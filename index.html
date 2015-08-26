@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<body bgcolor="000000">
+<style>
+h1{
+	color:#FFFFFF;
+
+}
+
+</style>
+
+<h1 style="text-align:center;" >Climate Change and Me</h1>
+<p class="p1"></p>
+<style>
+ul {
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+a {
+    float: left;
+    width: 6em;
+    text-decoration: none;
+    color: white;
+    background-color: purple;
+    padding: 0.2em 0.6em;
+    border-right: 1px solid white;
+}
+
+a:hover {
+    background-color: fuchsia;
+}
+
+li {
+    text-align: center;
+    display: inline;
+}
+</style>
+</head>
+<!--<div style="width: 200px; margin-left: auto; margin-right: auto;">
+
+
+<ul>
+<li><a href="#">Link one</a></li>
+<li><a href="#">Link two</a></li>
+<li><a href="#">Link three</a></li>
+<li><a href="#">Link four</a></li>
+</ul>
+
+</div>-->
+</body>
+</html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title style="text-align:center">Climate Change and Me</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1265.19">
+  <style type="text/css">
+    p.p1 {margin: 0 auto 0 auto; font: 12.0px Times}
+  </style>
+</head>
+
+<html>
+<p style="text-align:center; color:#26EDED;"><strong>Click one of the markers on the map below to read about how climate change has <br> effected your city and how things will continue to change</strong></p>
+<head>
+  <style>
+  #map_canvas {
+    width: 900px;
+    height: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  </style>
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+    function initialize() {
+      var mapCanvas = document.getElementById('map_canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(42.557087, -8.592321),
+          zoom: 2,
+          mapTypeId: google.maps.MapTypeId.SATELLITE
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+        //first marker New York
+        var Marker1 = new google.maps.Marker({
+          position: new google.maps.LatLng(40.693137, -73.999976),
+          map: map,
+          icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+          });
+         var infowindow = new google.maps.InfoWindow({
+          content: "New York"
+        });
+        infowindow.open(map,Marker1);
+        google.maps.event.addListener(Marker1, 'click', function () {
+          window.location.href = 'http://meganbeneteau.github.io/city.html?city=newyork';
+        });
+        //second marker Nairobi
+        var Marker2 = new google.maps.Marker({
+          position: new google.maps.LatLng(-1.273221, 36.831666),
+          map: map,
+          icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+          });
+        var infowindow = new google.maps.InfoWindow({
+          content: "Nairobi"
+        });
+        infowindow.open(map,Marker2);
+        google.maps.event.addListener(Marker2, 'click', function () {
+          window.location.href = 'http://meganbeneteau.github.io/city.html?city=nairobi';
+        });
+        
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+    <div id="map_canvas"></div>
+  </body>
+</html>

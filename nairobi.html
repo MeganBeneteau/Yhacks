@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<!--<body bgcolor="#7C39D4">-->
+<h1 style="text-align: center;">City</h1>
+<!--<body bgcolor="000000">-->
+<div style="text-align:center" id="myResults"></div>
+<div style="text-align:center" id="city"></div>
+
+
+<script>
+var $_GET = {};
+if(document.location.toString().indexOf('?') !== -1) {
+    var query = document.location
+                   .toString()
+                   .replace(/^.*?\?/, '')
+                   .replace(/#.*$/, '')
+                   .split('&');
+
+    for(var i=0, l=query.length; i<l; i++) {
+       var aux = decodeURIComponent(query[i]).split('=');
+       $_GET[aux[0]] = aux[1];
+    }
+}
+//get the 'index' query parameter
+//alert($_GET['city']);
+if($_GET['city']){
+document.querySelector('#myResults').innerHTML = $_GET['city'];
+}
+else{
+document.querySelector('#myResults').innerHTML = 'Error, no city selected';
+}
+</script>
+
+<style>
+a {
+    display:list-item;
+    width:100px;
+    height:100px;
+    background-color:#00CC00;
+    border:1px solid #000000;
+}
+td {
+    display:list-item;
+    width:100px;
+    height:100px;
+    background-color:#00CC00;
+    border:1px solid #000000;
+}
+</style>
+
+<iframe src='http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AqJNqU6vZ3rLdFVZZkl3SUlQd2g1UTlSei1aSUhDX1E&font=Bevan-PotanoSans&maptype=toner&lang=en&height=650' width='100%' height='650' frameborder='0'></iframe>
+
+</body>
+</html>
